@@ -1,0 +1,121 @@
+
+.videoOverlay {
+  z-index: 999;
+}
+
+#previewContentSection {
+  position: relative;
+  /* max-height: 10em; */
+}
+
+.previewWindowParent {
+  position: relative;
+  width: 100%; /* Set the width to be 100% of the parent */
+  /* padding-bottom is based on the aspect ratio of the video */
+  padding-bottom: 56.25%; /* This is for 16:9 aspect ratio */
+  height: 0; /* This will make the parent take the height based on the padding-bottom */
+}
+
+.video-overlay-button {
+  position: absolute;
+  bottom: 50%;
+  left: 32px;
+  transform: translateX(-50%) translateY(50%);
+  z-index: 999;
+  background-color: transparent;
+  border: none;
+  color: white;
+  filter: brightness(3.0);
+}
+
+#place_order.disabled {
+  background-color: #ccc !important; /* Grey color */
+  color: #666 !important; /* Text color */
+  cursor: not-allowed !important;
+}
+
+#previewWindow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%; /* Set the width to 100% of the parent */
+}
+
+#ovalOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.overlay {
+  position: absolute;
+  top: 92%;
+  text-align: center;
+  width: 100%;
+  opacity: 1;
+  z-index: 999;
+}
+
+#colorstrip {
+  width: 100%;
+  height: 1px;
+  border-style: solid;
+  border-color: #117a8b;
+}
+
+#taskSection {
+  margin-bottom: 20px;
+}
+
+.video-section {
+  display: grid;
+  justify-content: center;
+  grid-template-areas: '. center-part-a .'
+    '. center-part-b .';
+}
+
+#loadingSpinnerVideoParent {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex; /* Assuming you want to keep the flex display for inner content */
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+}
+
+#faceImage {
+  z-index: 1000;
+  opacity: 0.2;
+  filter: brightness(3.0);
+}
+
+.checkout-button.wp-element-button:disabled {
+  opacity: 0.45; /* Dim the butt on to indicate it's disabled */
+  cursor: not-allowed; /* Change cursor to indicate that the button is not clickable */
+  pointer-events: none; /* Prevent any interactions with the button */
+}
+
+.mirrorVideo {
+  transform: scaleX(-1);
+}
+
+@media (min-width: 576px) { /* Adjusts for Bootstrap's small breakpoint */
+  .custom-centered-modal {
+    left: 50% !important; /* Moves the modal to the middle of the viewport */
+    transform: translateX(-50%) !important; /* Adjusts the position to truly center it */
+  }
+}
+
+@media (max-width: 767px) {
+  .modal-dialog {
+    max-width: 100%;
+    margin: 0;
+  }
+  .modal-content {
+    height: auto;
+    min-height: 100vh; /* Full viewport height */
+    border-radius: 0;
+  }
+}
